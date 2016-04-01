@@ -3,7 +3,9 @@ var events ={
     reelSpinStart:[],
     reelSpinStop:[],
     allReelsStopped:[],
-    spinButtonPressed:[]
+    spinButtonPressed:[],
+    serverResponse:[],
+    serverRequest:[]
 
 };
 

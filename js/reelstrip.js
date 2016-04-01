@@ -45,7 +45,7 @@ function Reel(reelNum, reelStrip, x) {
 
     this.getRoot = function () {
         return me.rootContainer;
-    }
+    };
 
     this.update = function () {
         var lastStep;
@@ -60,6 +60,9 @@ function Reel(reelNum, reelStrip, x) {
                 lastStep = me.stopPosition - me.y;
                 me.y += lastStep;
                 me.movingState = 'stopped';
+                if (me.reelNum == 4){
+                    fireEvent('allReelsStopped');
+                }
             } else {
                 me.y += me.spinSpeed;
             }
@@ -80,10 +83,7 @@ function Reel(reelNum, reelStrip, x) {
         me.rootContainer.y = me.y;
         me.rootContainer.x = me.x;
 
-
-
-
-    }
+    };
 
     addListener('reelSpinStart', function (reelNum) {
         if (me.reelNum == reelNum) {
@@ -98,7 +98,12 @@ function Reel(reelNum, reelStrip, x) {
         }
     });
 
-
+ /*   addListener('reelSpinStop', function () {
+        if (me.reelNum == 4 && me.movingState == 'stopped') {
+            fireEvent('allReelsStopped');
+        }
+    });
+*/
 }
 
 
@@ -114,6 +119,8 @@ var reel1 = new Reel(1, reelStrip1, 220);
 var reel2 = new Reel(2, reelStrip2, 380);
 var reel3 = new Reel(3, reelStrip3, 540);
 var reel4 = new Reel(4, reelStrip4, 700);
+
+var server = new Server ();
 
 
 reels.addChild(reel0.getRoot());
@@ -134,5 +141,12 @@ thing.endFill();
 
 stage.addChild(thing);
 reels.mask = thing;
+
+
+
+function Spin(){
+
+}
+
 
 
