@@ -62,6 +62,13 @@ function Reel(reelNum, reelStrip, x) {
                 me.movingState = 'stopped';
                 if (me.reelNum == 4){
                     fireEvent('allReelsStopped');
+
+                    var winBar = new WinBar();
+
+                    spin.initialWin();
+
+                    stage.addChild(winBar.text());
+
                 }
             } else {
                 me.y += me.spinSpeed;
@@ -121,6 +128,7 @@ var reel3 = new Reel(3, reelStrip3, 540);
 var reel4 = new Reel(4, reelStrip4, 700);
 
 var server = new Server ();
+
 
 
 reels.addChild(reel0.getRoot());

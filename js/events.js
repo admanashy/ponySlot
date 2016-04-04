@@ -5,7 +5,8 @@ var events ={
     allReelsStopped:[],
     spinButtonPressed:[],
     serverResponse:[],
-    serverRequest:[]
+    serverRequest:[],
+    initialWin:[]
 
 };
 

@@ -42,6 +42,13 @@ function SpinModule(){
 
     };
 
+    this.initialWin= function(){
+
+                fireEvent('initialWin', me.lastResponse.win);
+
+
+    };
+
     this.onServerResponse = function(response){
         console.log(response);
 
