@@ -21,13 +21,10 @@ function WinBar(){
 
 
         var winText = new PIXI.Text('Win:  '+ me.win, style);
-        winText.x = 400;
-        winText.y = 550;
+        winText.x = 470;
+        winText.y = 300;
 
         return winText;
-    };
-    this.drawWinBar = function(){
-
     };
 
     addListener('initialWin', function(win) {

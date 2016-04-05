@@ -64,10 +64,13 @@ function Reel(reelNum, reelStrip, x) {
                     fireEvent('allReelsStopped');
 
                     var winBar = new WinBar();
+                    var winBox = new WinBox();
 
                     spin.initialWin();
 
+                    stage.addChild(winBox.drawWinBar());
                     stage.addChild(winBar.text());
+
 
                 }
             } else {
@@ -76,6 +79,8 @@ function Reel(reelNum, reelStrip, x) {
 
 
         } else if (me.movingState == 'moving'){
+            stage.removeChild(winBox);
+            stage.removeChild(winBar);
             me.y += me.spinSpeed;
 
         }

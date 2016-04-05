@@ -5,13 +5,14 @@ function SpinModule(){
 
     this.startAllReels = function(){ //зделать фором
 
+
         for (var i = 0; i<=4; i++){
             me.startReel(i, i*500);
         }
 
         fireEvent('serverRequest', {action:'spin'});
 
-        setTimeout(me.stopAllReels, 10000)
+        setTimeout(me.stopAllReels, 1000)
 
 
     };
