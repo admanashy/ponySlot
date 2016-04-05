@@ -79,8 +79,6 @@ function Reel(reelNum, reelStrip, x) {
 
 
         } else if (me.movingState == 'moving'){
-            stage.removeChild(winBox);
-            stage.removeChild(winBar);
             me.y += me.spinSpeed;
 
         }

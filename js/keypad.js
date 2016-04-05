@@ -9,3 +9,4 @@ spinButton.on('mousedown', function(){
 });
 
 stage.addChild(spinButton);
+

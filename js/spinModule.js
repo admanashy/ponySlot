@@ -12,7 +12,7 @@ function SpinModule(){
 
         fireEvent('serverRequest', {action:'spin'});
 
-        setTimeout(me.stopAllReels, 1000)
+        setTimeout(me.stopAllReels, 10000)
 
 
     };
@@ -61,5 +61,6 @@ function SpinModule(){
 
 
 }
+
 
 //должны останавливаться на 0 позициию как только рилы остановились рилы вызывают событие которое запускало олл рилс стоппед
