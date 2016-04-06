@@ -86,11 +86,3 @@ function SButton(x, y, url){
 
     setSate - выставлять новое состояние*/
 }
-
-var spinButton = new SButton (900,100,'image/button.png');
-
-spinButton.init(stage);
-
-spinButton.onClickCallBack = function(){
-    console.log('Hello!')
-}
