@@ -57,6 +57,7 @@ function SpinModule(){
     };
 
     addListener('serverResponse', me.onServerResponse);
+    addListener('buttonPressed', me.startAllReels);
     addListener('spinButtonPress', me.startAllReels);
 
 

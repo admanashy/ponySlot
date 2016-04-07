@@ -1,21 +1,10 @@
-var spinButton = PIXI.Sprite.fromImage('image/button.png');
-spinButton.position.set(400, 610);
-spinButton.height = 100;
-spinButton.width = 100;
-spinButton.interactive = true;
-
-spinButton.on('mousedown', function(){
-    fireEvent('spinButtonPress');
-});
-
-stage.addChild(spinButton);
-
 function SButton(x, y, url){
     var me = this;
 
-    me.x= x;
-    me.y = y;
-    me.path = url;
+    this.x= x;
+    this.y = y;
+    this.path = url;
+    this.state = 'up';
 
     //метод инит, будет принемать контейнер, будет создавать спрайт, задавать позицию
     this.init = function(mainStage){
@@ -25,7 +14,6 @@ function SButton(x, y, url){
         newButton.height = 100;
         newButton.width = 100;
         newButton.interactive = true;
-        newButton.state = 'up';
 
         newButton.on('mousedown', me.onClick);
         newButton.on('mousehover', me.onHover);
@@ -45,23 +33,20 @@ function SButton(x, y, url){
 
     };
 
-    this.onClick = function (state){
-        if (state !== 'disabled'){
-            me.onClickCallBack();
-            console.log('true!!!')
-        }
+    this.onClick = function (){
+        if (me.state !== 'down'){
+            me.state = 'down';
+            fireEvent('buttonPressed');
+            console.log(me.state)
+            newButton = PIXI.Sprite.fromImage(me.path);
+        };
     };
 
-    this.onHover = function (state){
-        if (state == 'down'){
-            console.log('true!!!')
-        }
-    };
+    this.onHover = function (state) {
+    }
 
     this.onClickUp = function (state){
-        if (state == 'down'){
-            console.log('true!!!')
-        }
+
     };
 
     this.onDisabled = function (state){

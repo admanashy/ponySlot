@@ -1,4 +1,5 @@
 var events ={
+    buttonPressed:[],
     spinButtonPress:[],
     reelSpinStart:[],
     reelSpinStop:[],
