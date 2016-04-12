@@ -4,10 +4,10 @@ var events ={
     reelSpinStart:[],
     reelSpinStop:[],
     allReelsStopped:[],
-    spinButtonPressed:[],
     serverResponse:[],
     serverRequest:[],
-    initialWin:[]
+    initialWin:[],
+    winPresentation: []
 
 };
 

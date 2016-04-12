@@ -27,6 +27,8 @@ function Reel(reelNum, reelStrip, x) {
     me.rootContainer.y = me.y;
     me.rootContainer.x = me.x;
 
+
+
     this.getRoot = function () {
         return me.rootContainer;
     };
@@ -46,17 +48,7 @@ function Reel(reelNum, reelStrip, x) {
                 me.movingState = 'stopped';
                 if (me.reelNum == 4){
                     fireEvent('allReelsStopped');
-
-                    var winBar = new WinBar();
-                    var winBox = new WinBox();
-
-                    spin.initialWin();
-
-                    stage.addChild(winBox.drawWinBar());
-                    stage.addChild(winBar.text());
-
-
-                }
+                                    }
             } else {
                 me.y += me.spinSpeed;
             }
@@ -82,6 +74,7 @@ function Reel(reelNum, reelStrip, x) {
     addListener('reelSpinStart', function (reelNum) {
         if (me.reelNum == reelNum) {
             me.movingState = 'moving';
+
         }
     });
 

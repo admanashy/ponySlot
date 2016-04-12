@@ -12,7 +12,7 @@ function SpinModule(){
 
         fireEvent('serverRequest', {action:'spin'});
 
-        setTimeout(me.stopAllReels, 10000)
+        setTimeout(me.stopAllReels, 1000)
 
 
     };
@@ -45,7 +45,7 @@ function SpinModule(){
 
     this.initialWin= function(){
 
-                fireEvent('initialWin', me.lastResponse.win);
+                fireEvent('initialWin', me.lastResponse);
 
 
     };

@@ -6,7 +6,7 @@ function Server(){
         me.response({
             reels: [1,3,4,2,1],
             win: 200,
-            winType : 'bigwin'
+            winType : 'Big Win'
         });
 
     };

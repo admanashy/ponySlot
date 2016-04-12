@@ -51,10 +51,17 @@ stage.addChild(thing);
 reels.mask = thing;
 
 
-var spinButton = new SButton (900,100,'image/button.png');
 
+var spinButton = new RegularButton(400,550,'image/button.png','image/buttonDown.png');
 spinButton.init(stage);
 
-spinButton.onClickCallBack = function(){
-    console.log('Hello!')
-}
+spinButton.onMouseDownCallBack = function(){
+    fireEvent('spinButtonPress');
+};
+
+
+var gamePanel = new GamePanel();
+gamePanel.init(stage);
+
+var bigWin  = new BigWin();
+bigWin.init(stage);
