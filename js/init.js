@@ -14,18 +14,12 @@ stage.addChild(background);
 var spin = new SpinModule();
 
 
-var reelStrip0 = ['sym1', 'sym3', 'sym8', 'sym8', 'sym4', 'sym8', 'sym6', 'sym2', 'sym7', 'sym3', 'sym8', 'sym5', 'sym5', 'sym1', 'sym4', 'sym1', 'sym5', 'sym7', 'sym2', 'sym3', 'sym1', 'sym7', 'sym3', 'sym2', 'sym7', 'sym4', 'sym6', 'sym3', 'sym2', 'sym4', 'sym6', 'sym6', 'sym2'];
-var reelStrip1 = ['sym3', 'sym5', 'sym6', 'sym5', 'sym4', 'sym6', 'sym3', 'sym7', 'sym2', 'sym1', 'sym6', 'sym1', 'sym4', 'sym7', 'sym8', 'sym8', 'sym3', 'sym2', 'sym5', 'sym8', 'sym1', 'sym2', 'sym2', 'sym4', 'sym3', 'sym6', 'sym3', 'sym7', 'sym1', 'sym4', 'sym8', 'sym2', 'sym7'];
-var reelStrip2 = ['sym5', 'sym1', 'sym5', 'sym8', 'sym2', 'sym3', 'sym6', 'sym3', 'sym4', 'sym1', 'sym1', 'sym2', 'sym4', 'sym8', 'sym7', 'sym6', 'sym6', 'sym3', 'sym2', 'sym3', 'sym4', 'sym7', 'sym2', 'sym5', 'sym2', 'sym4', 'sym7', 'sym7', 'sym6', 'sym8', 'sym3', 'sym8', 'sym1'];
-var reelStrip3 = ['sym4', 'sym3', 'sym6', 'sym3', 'sym7', 'sym1', 'sym4', 'sym8', 'sym2', 'sym3', 'sym5', 'sym6', 'sym5', 'sym4', 'sym6', 'sym3', 'sym7', 'sym2', 'sym1', 'sym6', 'sym1', 'sym4', 'sym7', 'sym8', 'sym8', 'sym3', 'sym2', 'sym5', 'sym8', 'sym1', 'sym2', 'sym2', 'sym7'];
-var reelStrip4 = ['sym1', 'sym2', 'sym4', 'sym8', 'sym7', 'sym6', 'sym6', 'sym3', 'sym2','sym5', 'sym1', 'sym5', 'sym8', 'sym2', 'sym3', 'sym6', 'sym3', 'sym4', 'sym1', 'sym3', 'sym4', 'sym7', 'sym2', 'sym5', 'sym2', 'sym4', 'sym7', 'sym7', 'sym6', 'sym8', 'sym3', 'sym8', 'sym1'];
 
-
-var reel0 = new Reel(0, reelStrip0, 60);
-var reel1 = new Reel(1, reelStrip1, 220);
-var reel2 = new Reel(2, reelStrip2, 380);
-var reel3 = new Reel(3, reelStrip3, 540);
-var reel4 = new Reel(4, reelStrip4, 700);
+var reel0 = new Reel(0, CONFIG.reelStrips[0], 60);
+var reel1 = new Reel(1, CONFIG.reelStrips[1], 220);
+var reel2 = new Reel(2, CONFIG.reelStrips[2], 380);
+var reel3 = new Reel(3, CONFIG.reelStrips[3], 540);
+var reel4 = new Reel(4, CONFIG.reelStrips[4], 700);
 
 var server = new Server ();
 

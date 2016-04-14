@@ -7,7 +7,13 @@ var events ={
     serverResponse:[],
     serverRequest:[],
     initialWin:[],
-    winPresentation: []
+    winPresentation: [],
+    bigWinStarted:[],
+    bigWinEnded:[],
+    showBetlines:[],
+    hideBetlines:[],
+    hideAllBetlines:[]
+
 
 };
 

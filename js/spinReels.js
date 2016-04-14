@@ -1,9 +1,6 @@
 
-function Spin(){
-
-}
-
 animate();
+
 function animate() {
     requestAnimationFrame(animate);
 
@@ -12,6 +9,7 @@ function animate() {
     reel2.update();
     reel3.update();
     reel4.update();
+
 
 
 
