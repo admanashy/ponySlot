@@ -63,7 +63,9 @@ function GamePanel(){
     };
 
     this.onServerResponse = function(params){
+
         me.win = params.win;
+        console.log(me.win);
         me.winText.visible = true;
         me.noWinText.visible = false;
     };

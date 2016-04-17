@@ -55,15 +55,16 @@ function BigWin(){
 
 
     this.onServerResponse = function(response){
-        console.log(me.winType+'1');
+
         me.winType = response.winType;
+
         };
 
     addListener('serverResponse', me.onServerResponse);
 
     addListener('allReelsStopped', function() {
-        console.log(me.winType+'2');
-        if (me.winType == 'Big Win'){
+
+        if (me.winType == 'big win'){
             me.rootContanier.visible = true;
         }
     });
