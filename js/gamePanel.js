@@ -62,11 +62,13 @@ function GamePanel(){
 
     };
 
-    addListener('initialWin', function(params) {
+    this.onServerResponse = function(params){
         me.win = params.win;
         me.winText.visible = true;
         me.noWinText.visible = false;
-    });
+    };
+
+    addListener('serverResponse', me.onServerResponse);
 
     addListener('spinButtonPress', function(){
         me.win = 0;

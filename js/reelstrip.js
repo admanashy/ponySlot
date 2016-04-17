@@ -48,6 +48,8 @@ function Reel(reelNum, reelStrip, x) {
                 me.movingState = 'stopped';
                 if (me.reelNum == 4){
                     fireEvent('allReelsStopped');
+
+
                                     }
             } else {
                 me.y += me.spinSpeed;

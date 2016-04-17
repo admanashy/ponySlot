@@ -1,4 +1,4 @@
-function BigWin(stage){
+function BigWin(){
     var me = this;
 
     this.lastResponse = {};
@@ -54,10 +54,15 @@ function BigWin(stage){
     };
 
 
+    this.onServerResponse = function(response){
+        console.log(me.winType+'1');
+        me.winType = response.winType;
+        };
 
-    addListener('initialWin', function(params) {
-        me.winType = params.winType;
+    addListener('serverResponse', me.onServerResponse);
 
+    addListener('allReelsStopped', function() {
+        console.log(me.winType+'2');
         if (me.winType == 'Big Win'){
             me.rootContanier.visible = true;
         }
@@ -67,5 +72,6 @@ function BigWin(stage){
             me.rootContanier.visible = false;
 
     });
+
 
 }
