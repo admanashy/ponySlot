@@ -1,3 +1,8 @@
+    var serverConfig = {
+        betLines:[[0,0,0],[1,1,1],[2,2,2]]
+    };
+
+
 function Server(){
     var me = this;
 
@@ -33,7 +38,7 @@ function Server(){
             response.winType = 'large win'
         } else if (response.win < 100 && response.win >= 50){
             response.winType = 'medium win'
-        } else if (response.win < 50){
+        } else if (response.win < 50 && response.win > 0){
             response.winType = 'small win'
         }
 
@@ -84,8 +89,9 @@ function Server(){
     };
 
     this.response = function(response){
-
-        fireEvent('serverResponse', response);
+        setTimeout(function(){
+            fireEvent('serverResponse', response);
+        }, 200);
 
     };
 

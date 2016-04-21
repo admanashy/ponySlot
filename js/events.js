@@ -6,13 +6,12 @@ var events ={
     allReelsStopped:[],
     serverResponse:[],
     serverRequest:[],
-    initialWin:[],
-    winPresentation: [],
     bigWinStarted:[],
     bigWinEnded:[],
     showBetlines:[],
     hideBetlines:[],
-    hideAllBetlines:[]
+    hideAllBetlines:[],
+    indicatorHover: []
 
 
 };

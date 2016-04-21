@@ -59,3 +59,12 @@ gamePanel.init(stage);
 
 var bigWin  = new BigWin();
 bigWin.init(stage);
+
+var betLineIndicators  = new BetLineIndicators();
+betLineIndicators.init(stage);
+
+betLineIndicators.onMouseDownCallBack = function(){
+    fireEvent('spinButtonPress');
+};
+
+

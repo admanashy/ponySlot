@@ -12,7 +12,7 @@ function SpinModule(){
 
         fireEvent('serverRequest', {action:'spin'});
 
-        setTimeout(me.stopAllReels, 1000)
+        setTimeout(me.stopAllReels, 5000)
 
 
     };

@@ -1,5 +1,5 @@
-function GamePanel(){
-    var me =  this;
+function GamePanel() {
+    var me = this;
     this.width = 1280;
     this.height = 30;
 
@@ -7,21 +7,20 @@ function GamePanel(){
     this.y = 345;
     this.win = 0;
 
-    this.bgColor= 'black';
+    this.bgColor = 'black';
 
-    this.totalWin = function (){
+    this.totalWin = function () {
 
         var style = {
-            font : '20px Arial',
-            fill : '#F7EDCA'
+            font: '20px Arial',
+            fill: '#F7EDCA'
 
         };
 
-        var winText = new PIXI.Text('TOTAL WIN:  '+ me.win, style);
+        var winText = new PIXI.Text('TOTAL WIN:  ' + me.win, style);
         winText.x = me.x + 400;
         winText.y = me.y + 10;
         winText.visible = false;
-
 
 
         var noWinText = new PIXI.Text('TOTAL WIN:  ', style);
@@ -40,7 +39,7 @@ function GamePanel(){
 
     };
 
-    this.gamePanelShape = function(){
+    this.gamePanelShape = function () {
         var shape = new PIXI.Graphics();
         shape.lineStyle(0);
         shape.beginFill(me.bgColor);
@@ -50,32 +49,41 @@ function GamePanel(){
         return shape;
     };
 
-        this.init = function(stage) {
+    this.init = function (stage) {
         var rootContanier = new PIXI.Container(me.width, me.height);
-            rootContanier.position.x = me.x;
-            rootContanier.position.y = me.y;
+        rootContanier.position.x = me.x;
+        rootContanier.position.y = me.y;
 
-            rootContanier.addChild(me.gamePanelShape());
-            rootContanier.addChild(me.totalWin());
+        rootContanier.addChild(me.gamePanelShape());
+        rootContanier.addChild(me.totalWin());
 
         stage.addChild(rootContanier);
 
     };
 
-    this.onServerResponse = function(params){
 
-        me.win = params.win;
-        console.log(me.win);
-        me.winText.visible = true;
-        me.noWinText.visible = false;
+    this.onServerResponse = function (response) {
+        me.win = response.win;
+        console.log(me.win + '!');
     };
 
     addListener('serverResponse', me.onServerResponse);
 
-    addListener('spinButtonPress', function(){
+    addListener('allReelsStopped', function () {
+        console.log(me.win + '?');
+        me.winText.visible = true;
+        me.noWinText.visible = false;
+
+        me.winText.text = 'TOTAL WIN:  '+ me.win;
+
+    });
+    addListener('spinButtonPress', function () {
+        console.log('rtybggfgbn');
+
         me.win = 0;
         me.winText.visible = false;
         me.noWinText.visible = true;
+
 
     });
 
