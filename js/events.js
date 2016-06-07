@@ -8,10 +8,9 @@ var events ={
     serverRequest:[],
     bigWinStarted:[],
     bigWinEnded:[],
-    showBetlines:[],
-    hideBetlines:[],
+    showBetline:[],
+    hideBetline:[],
     hideAllBetlines:[],
-    indicatorHover: []
 
 
 };
